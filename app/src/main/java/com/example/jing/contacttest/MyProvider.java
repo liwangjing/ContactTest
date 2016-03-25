@@ -18,10 +18,10 @@ public class MyProvider extends ContentProvider{
 
     static {
         uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-        uriMatcher.addURI("com.example.app.provider","table1",TABLE1_DIR);
-        uriMatcher.addURI("com.example.app.provider","table1/#",TABLE1_ITEM);
-        uriMatcher.addURI("com.example.app.provider","table2",TABLE2_DIR);
-        uriMatcher.addURI("com.example.app.provider","table2/#",TABLE2_ITEM);
+        uriMatcher.addURI("com.example.jing.contacttest.provider","table1",TABLE1_DIR);
+        uriMatcher.addURI("com.example.jing.contacttest.provider","table1/#",TABLE1_ITEM);
+        uriMatcher.addURI("com.example.jing.contacttest.provider","table2",TABLE2_DIR);
+        uriMatcher.addURI("com.example.jing.contacttest.provider","table2/#",TABLE2_ITEM);
 
     }
 
@@ -50,13 +50,13 @@ public class MyProvider extends ContentProvider{
     public String getType(Uri uri) {
         switch (uriMatcher.match(uri)) {
             case TABLE1_DIR:
-                return "vnd.android.cursor.dir/vnd.com.example.app.provider.table1";
+                return "vnd.android.cursor.dir/vnd.com.example.jing.contacttest.provider.table1";
             case TABLE1_ITEM:
-                return "vnd.android.cursor.item/vnd.com.example.app.provider.table1";
+                return "vnd.android.cursor.item/vnd.com.example.jing.contacttest.provider.table1";
             case TABLE2_DIR:
-                return "vnd.android.cursor.dir/vnd.com.example.app.provider.table2";
+                return "vnd.android.cursor.dir/vnd.com.example.jing.contacttest.provider.table2";
             case TABLE2_ITEM:
-                return "vnd.android.cursor.item/vnd.com.example.app.provider.table2";
+                return "vnd.android.cursor.item/vnd.com.example.jing.contacttest.provider.table2";
             default:
                 break;
         }
